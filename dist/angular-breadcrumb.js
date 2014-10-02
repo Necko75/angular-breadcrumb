@@ -201,6 +201,10 @@ function BreadcrumbDirective($interpolate, $breadcrumb, $rootScope) {
                 $rootScope.$on('$viewContentLoaded', function () {
                     renderBreadcrumb();
                 });
+                
+                $rootScope.$on('$stateChangeSuccess', function () {
+                    renderBreadcrumb();
+                });
 
                 // View(s) may be already loaded while the directive's linking
                 renderBreadcrumb();
